@@ -1,3 +1,4 @@
+@Sce579038
 Feature: Money interaction
     As a coffee buyer
     I want to be able to recieve the money i inserted when i press the cancel button and the machine is not brewing
@@ -6,6 +7,7 @@ Feature: Money interaction
     Background:
         Given that the machine is plugged in
 
+    @Tadd713bf
     Scenario Outline: the user inserts a lot of different coins and wants the correct change
         When I have inserted a <coin1> coin
         And a <coin2> coin
@@ -24,10 +26,12 @@ Feature: Money interaction
             | 5     | 2     | 2     | 2     | 0     | 0     | 0     | 1      |
             | 10    | 5     | 5     | 2     | 1     | 0     | 0     | 13     |
 
+    @Ta3c63706
     Scenario: the user inserts something that is not a valid coin into the coinsocket
         When I insert something that is not a valid coin into the coinsocket
         Then I should get an error message
 
+    @Tb0c04ef1
     Scenario Outline: The user puts in a coin, and then pays by card
         When I insert a <coin>kr coin
         And I pay <cardAmount>kr with card
@@ -39,17 +43,20 @@ Feature: Money interaction
             | 5    | 10         | 5      |
             | 2    | 10         | 2      |
             | 1    | 10         | 1      |
-    
+
+    @T4fe503fc
     Scenario: The user pays with a card without enough funds on it
         When i pay by card
         And i do not have enough money
         Then i should get a message that i do not have enough funds
 
+    @T79253d3d
     Scenario: The user tries to buy a coffee without inserting enough money
         Given that i have not inserted enough money
         When I press the startbutton
         Then I should get a message that i have not inserted enough money
-    
+
+    @Te3dbfd33
     Scenario Outline: The user presses the cancel button when the machine is not brewing
         Given that i have payed <amount> kr
         And have not pressed the startbutton
@@ -61,6 +68,7 @@ Feature: Money interaction
             | 10     | 10     |
             | 13     | 13     |
 
+    @Tcaa6dd44
     Scenario: User pays with card, then presses the cancelbutton
         Given that the user has payed with card
         When the user presses the cancelbutton

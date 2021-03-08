@@ -1,3 +1,4 @@
+@S8903006b
 Feature: Selection unsuccessful interaction
 As a user that selects a beverage that misses ingredients
 then the machine should not brew that beverage
@@ -7,6 +8,7 @@ Background:
 Given that the machine is plugged in
 
 
+@T5cdfbe6d
 Scenario Outline: user buys a beverage with missing ingredients
 Given that the user has selected <beverage>
 And there is not enough <ingredient>
@@ -26,6 +28,7 @@ Examples:
     |            kanna |      kaffe |                   'Not enough coffee, refill' |
 
 
+@T001c4b9a
 Scenario: the user tries to buy a beverage when the catch-spillage compartment is full
 Given that the catch-spill compartment is full
 And the user has selected a beverage
@@ -33,6 +36,7 @@ When the user presses the startbutton
 Then no beverage gets brewed
 And an error message is displayed: 'Empty the spillage compartment'
 
+    @T94933ed3
     Scenario: User presses the cancelbutton after three seconds from the moment the machine started brewing
         Given that the user has pressed startbutton
         When the user presses the cancelbutton
@@ -40,12 +44,14 @@ And an error message is displayed: 'Empty the spillage compartment'
         Then the machine continues brewing
         And the user gets the beverage
 
+@T373a353a
 Scenario: The user unplugs the water during the brewing process
     Given that the user has selected a beverage
     And has pressed the startbutton
     When the user disconnects the water
     Then an error appears
 
+@T49efacc2
 Scenario: User presses two buttons at the same time
 Given that the machine is plugged in
 When the user presses two buttons at the same time

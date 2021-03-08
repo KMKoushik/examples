@@ -1,3 +1,4 @@
+@S9424afde
 Feature: Selection successful interaction
 As a coffee buyer
 I want to be able to pick different types of beverages and get the beverage i picked
@@ -26,6 +27,7 @@ Examples:
     |            kanna |    0 |
 
 
+@T31967d5e
 Scenario Outline: User selects a beverage(coffee,latte,te,chocolate), the button lights up and the others goes dark
 When the user presses the <button1> button
 Then the button should light up
@@ -41,11 +43,13 @@ Examples:
     | chocolate |   kaffe |   latte |        te |
 
 
+@T32437101
 Scenario:User buys a coffee with milk and sugar
 When the user selects a coffee with milk and sugar
 And presses the startbutton
 Then the coffee machine brews a coffee with milk and sugar
 
+    @T8bc434f5
     Scenario: User presses the cancelbutton within three seconds from the moment the machine started brewing
         Given that the user has pressed startbutton
         When the user presses the cancelbutton
