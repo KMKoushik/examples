@@ -14,7 +14,7 @@ const nthTodoItem = nth => locate('.todo-list li').at(nth).as(`${nth} todo item`
 
 module.exports = {
     goto() {
-        I.amOnPage('http://todomvc.com/examples/angularjs/#/')
+        I.amOnPage('https://todomvc.com/examples/angularjs/#/')
         I.refreshPage()
         I.executeScript(() => sessionStorage.clear())
         I.executeScript(() => console.error('Boom!'))
