@@ -1,4 +1,4 @@
-Feature('Sub test @S0495ef28')
+Feature('Sub test')
 
 Before(async ({ I, TodosPage }) => {
   TodosPage.goto()
@@ -7,7 +7,7 @@ Before(async ({ I, TodosPage }) => {
 /**
  * Happy Path tests
  */
-Scenario('Create a new sub test @T5abe4f75', async ({ I, TodosPage }) => {
+Scenario('Create a new sub test', async ({ I, TodosPage }) => {
   I.say('Given I have an empty todo list')
 
   I.say('When I create a todo "foo"')
@@ -19,7 +19,7 @@ Scenario('Create a new sub test @T5abe4f75', async ({ I, TodosPage }) => {
   I.saveScreenshot('create-todo-item.png')
 });
 
-Scenario('Create multiple subt test @Ta46b38e9', async ({ I, TodosPage }) => {
+Scenario('Create multiple subt test', async ({ I, TodosPage }) => {
   I.say('Given I have an empty todo list')
   I.say('When I create todos "foo", "bar" and "baz"')
   TodosPage.enterTodo('foo')
